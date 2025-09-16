@@ -1,5 +1,6 @@
 import Image from "next/image";
 import search from "../assets/search-icon.png";
+
 type Props = {};
 
 const Navbar = (props: Props) => {
@@ -26,7 +27,7 @@ const Navbar = (props: Props) => {
 		},
 	];
 	return (
-		<div className="bg-[#1212121A] border-b border-[#2A2A2A] flex items-center px-20 py-2 absolute top-0 left-0 right-0 justify-between backdrop-blur-xl z-50">
+		<div className="bg-[#1212121A] lg:border-b border-[#2A2A2A] flex items-center p-4 lg:px-20 lg:py-2 absolute top-0 left-0 right-0 justify-between backdrop-blur-xl z-50">
 			<div className="flex items-center gap-20">
 				<a href="/" className="cursor-pointer">
 					<Image
@@ -34,7 +35,7 @@ const Navbar = (props: Props) => {
 						alt="logo"
 						width={235}
 						height={60}
-						className="min-w-[235px] "
+						className="w-[183px] lg:min-w-[235px]"
 					/>
 				</a>
 
@@ -47,8 +48,7 @@ const Navbar = (props: Props) => {
 				</div>
 			</div>
 
-			<div className="flex gap-8 items-center">
-				{/* <span className="icon-[fe--search] bg-white text-white cursor-pointer w-5 h-5" /> */}
+			<div className="lg:flex hidden gap-8 items-center">
 				<Image
 					src={search}
 					alt="search"
@@ -59,6 +59,10 @@ const Navbar = (props: Props) => {
 				<button className=" w-[120px] h-10 bg-white text-black font-bold cursor-pointer">
 					GİRİŞ YAP
 				</button>
+			</div>
+
+			<div className="lg:hidden flex">
+				<Image src={"/menu-icon.png"} alt="menu" width={30} height={30} />
 			</div>
 		</div>
 	);
