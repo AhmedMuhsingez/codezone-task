@@ -27,7 +27,7 @@ const Navbar = (props: Props) => {
 		},
 	];
 	return (
-		<div className="bg-[#1212121A] lg:border-b border-[#2A2A2A] flex items-center p-4 lg:px-20 lg:py-2 absolute top-0 left-0 right-0 justify-between backdrop-blur-xl z-50">
+		<div className="bg-[#1212121A] lg:border-b border-[#2A2A2A] flex items-center p-4 lg:px-20 lg:py-2 sticky top-0 left-0 right-0 justify-between backdrop-blur-xl z-[99]">
 			<div className="flex items-center gap-20">
 				<a href="/" className="cursor-pointer">
 					<Image

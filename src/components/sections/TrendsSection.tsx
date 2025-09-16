@@ -4,6 +4,7 @@ import user1 from "@/assets/trends-section/user1.png";
 import user2 from "@/assets/trends-section/user2.png";
 import user3 from "@/assets/trends-section/user3.png";
 import ShadowButton from "../ShadowButton";
+import TrendsCard from "../cards/TrendsCard";
 type Props = {};
 
 function TrendsSection({}: Props) {
@@ -51,39 +52,13 @@ function TrendsSection({}: Props) {
 
 	const renderTrends = DATA.map((item) => {
 		return (
-			<div key={item.id} className="flex gap-10 lg:gap-20">
-				<span className="font-condensed text-[#2A2A2A] text-6xl leading-0 mt-6 lg:mt-5">
-					0{item.id}
-				</span>
-
-				<div className="flex flex-col gap-3">
-					<div className="flex gap-4 items-center">
-						<Image
-							src={item.image}
-							alt="user"
-							width={33}
-							height={33}
-							className="w-[33px] h-[33px] rounded-xl"
-						/>
-						<span className="font-main text-[16px] font-bold lg:font-normal">
-							{item.username}
-						</span>
-					</div>
-
-					<span className="font-condensed font-bold text-xl lg:text-[25px] tracking-normal uppercase max-w-[60ch] overflow-hidden line-clamp-3">
-						{item.description}
-					</span>
-
-					<div className="w-full h-[1px] bg-[#3B3B3B]" />
-
-					<a
-						href=""
-						className="bg-none text-[16px] w-fit cursor-pointer transition duration-300 hover:text-gray-400 font-main"
-					>
-						Daha Fazla Oku
-					</a>
-				</div>
-			</div>
+			<TrendsCard
+				key={item.id}
+				description={item.description}
+				id={item.id}
+				image={item.image}
+				username={item.username}
+			/>
 		);
 	});
 	return (

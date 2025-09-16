@@ -12,7 +12,7 @@ function ShadowButton({ name, shadow = true, color = "#F0E74D" }: Props) {
 			}}
 		>
 			<button
-				className={`relative cursor-pointer text-black font-bold text-[14px] px-8 py-3 transform transition-all duration-200 w-fit`}
+				className={`relative font-main cursor-pointer text-black font-bold text-[14px] px-8 py-3 transform transition-all duration-200 w-fit`}
 				style={{
 					clipPath: "polygon(0 0, 100% 0, 94% 100%, 5% 94%)",
 					zIndex: 10,
