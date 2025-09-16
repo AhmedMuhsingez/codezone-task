@@ -1,4 +1,5 @@
 import HeroSwiper from "@/components/sections/HeroSwiper";
+import TrendsSection from "@/components/sections/TrendsSection";
 import TwitchSection from "@/components/sections/TwitchSection";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
 		<>
 			<HeroSwiper />
 			<TwitchSection />
+			<TrendsSection />
 		</>
 	);
 }
