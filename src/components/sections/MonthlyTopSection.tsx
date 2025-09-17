@@ -17,8 +17,8 @@ function MonthlyTopSection({}: Props) {
 		<div className="relative h-[447px] flex flex-col lg:flex-row items-center">
 			<MonthlyTopBanner />
 
-			<div className="flex lg:pl-14 text-center justify-center flex-col lg:flex-row	">
-				<span className="font-condensed text-6xl font-bold max-w-[245px] pt-32 pb-20 lg:py-0">
+			<div className="flex lg:pl-14 text-center flex-col lg:flex-row items-center justify-between">
+				<span className="font-condensed text-6xl text-start font-bold max-w-[245px] pt-32 pb-20 lg:py-0">
 					AYIN FAVORİLERİ
 				</span>
 

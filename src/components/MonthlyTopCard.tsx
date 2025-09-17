@@ -1,22 +1,53 @@
-import Image, { StaticImageData } from "next/image";
-
-import shape1 from "../assets/monthly-top-section/shape1.png";
-type Props = {
-	order: number;
-	name: string;
-	album: string;
-	image: StaticImageData;
-};
+import AlbumCard from "./cards/AlbumCard";
+type Props = {};
 
 const MonthlyTopCard = (props: Props) => {
-	return (
-		<div className="w-[260px] h-[400px] lg:h-[260px] flex justify-center items-center relative bg-[#2A2A2A] overflow-hidden">
-			{/* <Image/> */}
-			<div></div>
+	const TOP10ALBUMS = [
+		{
+			order: 2,
+			name: "50 Cent",
+			album: "Curtis",
+			image: "/album-images/1.png",
+		},
+		{
+			order: 3,
+			name: "Snopp Dogg",
+			album: "Algorithm",
+			image: "/album-images/2.png",
+		},
+		{
+			order: 4,
+			name: "50 Cent",
+			album: "Curtis",
+			image: "/album-images/3.png",
+		},
+		{
+			order: 5,
+			name: "Snopp Dogg",
+			album: "Algorithm",
+			image: "/album-images/1.png",
+		},
+		{
+			order: 6,
+			name: "Snopp Dogg",
+			album: "Algorithm",
+			image: "/album-images/2.png",
+		},
+	];
 
-			<Image src={shape1} alt="shape" className="absolute bottom-0 left-0 w-full" />
-		</div>
-	);
+	const renderAlbums = TOP10ALBUMS.map((album, index) => {
+		return (
+			<AlbumCard
+				order={album.order}
+				name={album.name}
+				album={album.album}
+				image={album.image}
+				index={index}
+			/>
+		);
+	});
+
+	return <div className="flex gap-6">{renderAlbums}</div>;
 };
 
 export default MonthlyTopCard;
