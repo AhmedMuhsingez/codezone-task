@@ -1,0 +1,17 @@
+.mySwiper .swiper-pagination {
+	bottom: 0px !important;
+}
+
+.mySwiper .custom-bullet {
+	width: 60px !important;
+	height: 8px !important;
+	background: #666 !important;
+	border-radius: 0 !important;
+	opacity: 1 !important;
+	margin: 0 !important;
+	transition: all 0.3s ease !important;
+}
+
+.mySwiper .custom-bullet.swiper-pagination-bullet-active {
+	background: #ffd700 !important;
+}

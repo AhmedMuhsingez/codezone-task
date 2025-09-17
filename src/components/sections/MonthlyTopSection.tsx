@@ -1,5 +1,5 @@
 import MonthlyTopBanner from "../MonthlyTopBanner";
-import MonthlyTopCard from "../MonthlyTopCard";
+import MonthlyTopCard from "../MonthlyTopSwiper";
 
 type Props = {};
 
@@ -13,15 +13,14 @@ function MonthlyTopSection({}: Props) {
 		},
 	];
 	return (
-		// remove height from here
-		<div className="relative h-[447px] flex flex-col lg:flex-row items-center">
+		<div className="relative flex flex-col lg:flex-row items-center lg:pl-14 lg:justify-between py-20 overflow-visible">
 			<MonthlyTopBanner />
 
-			<div className="flex lg:pl-14 text-center flex-col lg:flex-row items-center justify-between">
-				<span className="font-condensed text-6xl text-start font-bold max-w-[245px] pt-32 pb-20 lg:py-0">
-					AYIN FAVORİLERİ
-				</span>
+			<span className="font-condensed text-6xl text-start font-bold max-w-[245px] pt-32 pb-20 lg:py-0 lg:w-1/3">
+				AYIN FAVORİLERİ
+			</span>
 
+			<div className="lg:w-[60%] w-full">
 				<MonthlyTopCard />
 			</div>
 		</div>
