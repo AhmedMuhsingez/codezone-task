@@ -47,8 +47,24 @@ const MonthlyTopSwiper = (props: Props) => {
 
 	return (
 		<Swiper
-			spaceBetween={10}
-			slidesPerView={2.5}
+			spaceBetween={0}
+			centeredSlides
+			slidesPerView={1.3}
+			breakpoints={{
+				640: {
+					slidesPerView: 1.5,
+					spaceBetween: 10,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 10,
+				},
+				1024: {
+					slidesPerView: 2.5,
+					spaceBetween: 10,
+					centeredSlides: false,
+				},
+			}}
 			pagination={{
 				clickable: true,
 				renderBullet: (index, className) => {
@@ -56,16 +72,13 @@ const MonthlyTopSwiper = (props: Props) => {
 				},
 			}}
 			modules={[Pagination, Navigation]}
-			// onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
 			className="mySwiper absolute inset-0"
-			navigation={{
-				nextEl: ".custom-next",
-				prevEl: ".custom-prev",
-				disabledClass: "cursor-not-allowed! opacity-50",
-			}}
 		>
 			{TOP10ALBUMS.map((album, index) => (
-				<SwiperSlide key={index}>
+				<SwiperSlide
+					key={index}
+					className="flex justify-center items-center justify-items-center"
+				>
 					<AlbumCard
 						order={album.order}
 						name={album.name}

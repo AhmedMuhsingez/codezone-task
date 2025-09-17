@@ -8,7 +8,7 @@ type Props = {};
 function MonthlyTopBanner({}: Props) {
 	return (
 		<div
-			className="bg-white absolute top-0 left-0 flex justify-center items-center gap-5 lg:gap-10 px-16 lg:px-32 py-6"
+			className="bg-white absolute top-0 left-0 flex justify-center items-center gap-5 lg:gap-10 px-16 lg:px-32 py-6 lg:py-10"
 			style={{
 				clipPath: "polygon(0 0, 100% 0, 89% 80%, 0% 100%)",
 			}}

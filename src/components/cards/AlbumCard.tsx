@@ -25,11 +25,11 @@ const AlbumCard = ({ index, image, name, album, order }: Props) => {
 	// This component uses a different shape each time for the array starting from 1 and ending on 3 and repeating
 
 	return (
-		<div className="relative w-[274px] h-[264px] overflow-hidden">
+		<div className="relative w-[274px] h-[380px] lg:h-[264px] overflow-hidden">
 			<Image
 				src={backgrounds[designIndex]}
 				alt="background"
-				className="w-[274px] h-[264px] z-10 absolute top-0 left-0"
+				className="w-[274px] h-[380px] lg:h-[264px] z-10 absolute top-0 left-0"
 			/>
 
 			<Image
@@ -38,7 +38,7 @@ const AlbumCard = ({ index, image, name, album, order }: Props) => {
 				className="absolute bottom-0 left-0 w-full z-20"
 			/>
 
-			<div className="absolute top-10 -left-[104px] -rotate-[10deg] w-[185px] h-[185px] z-20">
+			<div className="absolute top-10 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:-left-[104px] -rotate-[10deg] w-[160px] h-[160px] lg:w-[185px] lg:h-[185px] z-20">
 				<Image
 					src={image}
 					alt="album-image"
@@ -56,13 +56,13 @@ const AlbumCard = ({ index, image, name, album, order }: Props) => {
 				/>
 			</div>
 
-			<div className="absolute top-0 left-0 w-[274px] h-[264px] z-50 font-main flex flex-col justify-center items-center gap-4 ps-20">
+			<div className="absolute top-0 left-0 w-[274px] h-[380px] lg:h-[264px] z-50 font-main flex flex-col justify-center items-center gap-4 lg:pl-20 pt-40 lg:pt-0">
 				<div className="bg-[#323232] w-fit rounded-3xl px-3 py-1 text-[16px]">
 					<span className="">Top 10 </span>
 					<span className="font-bold">({order}. Sira)</span>
 				</div>
 
-				<div className="text-xl flex flex-col leading-tight">
+				<div className="text-xl flex lg:flex-col gap-x-2 leading-tight">
 					<span className="">{name.toUpperCase()}</span>
 					<span className="font-bold">{album.toUpperCase()}</span>
 				</div>
