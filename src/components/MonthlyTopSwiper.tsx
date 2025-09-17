@@ -2,10 +2,9 @@
 import AlbumCard from "./cards/AlbumCard";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Scrollbar } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination, Navigation } from "swiper/modules";
-import "swiper/css/navigation";
+import "swiper/css/scrollbar";
 
 import "@/styles/monthly-swiper.css";
 
@@ -49,6 +48,8 @@ const MonthlyTopSwiper = (props: Props) => {
 		<Swiper
 			spaceBetween={0}
 			centeredSlides
+			modules={[Scrollbar]}
+			scrollbar={{ draggable: true, dragSize: 150 }}
 			slidesPerView={1.3}
 			breakpoints={{
 				640: {
@@ -65,13 +66,6 @@ const MonthlyTopSwiper = (props: Props) => {
 					centeredSlides: false,
 				},
 			}}
-			pagination={{
-				clickable: true,
-				renderBullet: (index, className) => {
-					return `<div class="${className} custom-bullet"></div>`;
-				},
-			}}
-			modules={[Pagination, Navigation]}
 			className="mySwiper absolute inset-0"
 		>
 			{TOP10ALBUMS.map((album, index) => (

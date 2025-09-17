@@ -56,14 +56,15 @@ const AlbumCard = ({ index, image, name, album, order }: Props) => {
 				/>
 			</div>
 
-			<div className="absolute top-0 left-0 w-[274px] h-[380px] lg:h-[264px] z-50 font-main flex flex-col justify-center items-center gap-4 lg:pl-20 pt-40 lg:pt-0">
+			<div className="absolute top-0 left-0 w-[274px] h-[380px] lg:h-[264px] z-50 font-main flex flex-col justify-center items-center gap-4 lg:pl-20 pt-40 lg:pt-0 text-center">
 				<div className="bg-[#323232] w-fit rounded-3xl px-3 py-1 text-[16px]">
 					<span className="">Top 10 </span>
 					<span className="font-bold">({order}. Sira)</span>
 				</div>
 
-				<div className="text-xl flex lg:flex-col gap-x-2 leading-tight">
+				<div className="text-xl flex lg:flex-col gap-x-1 leading-tight">
 					<span className="">{name.toUpperCase()}</span>
+					<span className="block lg:hidden"> - </span>
 					<span className="font-bold">{album.toUpperCase()}</span>
 				</div>
 			</div>
