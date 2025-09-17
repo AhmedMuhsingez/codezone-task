@@ -43,7 +43,7 @@ export default function HeroSwiper() {
 	});
 
 	return (
-		<div className="relative">
+		<div className="relative  -top-14">
 			<Swiper
 				spaceBetween={30}
 				effect="fade"

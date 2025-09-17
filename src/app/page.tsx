@@ -1,3 +1,4 @@
+import DiscoverSection from "@/components/sections/DiscoverSection";
 import HeroSwiper from "@/components/sections/HeroSwiper";
 import MonthlyTopSection from "@/components/sections/MonthlyTopSection";
 import TrendsSection from "@/components/sections/TrendsSection";
@@ -10,6 +11,7 @@ export default function Home() {
 			<TwitchSection />
 			<TrendsSection />
 			<MonthlyTopSection />
+			<DiscoverSection />
 		</>
 	);
 }
