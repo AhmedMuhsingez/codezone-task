@@ -1,51 +1,39 @@
-import Image from "next/image";
-import search from "@/assets/search-icon.png";
-import gridView from "@/assets/discover-section/grid-view.png";
-import menuView from "@/assets/discover-section/menu-view.png";
-import discover from "@/assets/discover-section/discover.png";
-type Props = {};
+import { PostsResponse } from "@/types/types";
+import DiscoverSectionHeader from "../DiscoverSectionHeader";
+import user1 from "@/assets/trends-section/user1.png";
+import user2 from "@/assets/trends-section/user2.png";
+import user3 from "@/assets/trends-section/user3.png";
+import DiscoverCard from "../cards/DiscoverCard";
 
-function DiscoverSection({}: Props) {
+type Props = {
+	posts: PostsResponse;
+};
+
+function DiscoverSection({ posts }: Props) {
+	const renderPosts = posts.map((post, index) => {
+		const designIndex = index % 3;
+		const userImage = [user1, user2, user3][designIndex];
+		const userName = ["Ismail Kor", "Jonathan Stewart", "Steve Rogerson"][designIndex];
+
+		return (
+			<div key={post._id}>
+				<DiscoverCard
+					userImage={userImage}
+					userName={userName}
+					title={post.attributes.title}
+					desc={post.attributes.desc}
+					slug={post.attributes.slug}
+					date={new Date(post.createdAt)}
+					mainImage={post.attributes.img}
+				/>
+			</div>
+		);
+	});
 	return (
-		<div className="flex flex-col lg:flex-row items-center lg:pl-14 lg:justify-around pb-24 w-full">
-			<div className="flex justify-between w-[60%]">
-				<div className="flex gap-4">
-					<span className="font-condensed text-6xl font-bold">KEŞFET</span>
-
-					<Image
-						src={discover}
-						alt="discover"
-						// className="w-[53px] h-[53px]"
-						width={53}
-						height={53}
-					/>
-				</div>
-
-				<div className="flex gap-2 items-center">
-					<Image
-						src={search}
-						alt="search"
-						width={23}
-						height={22}
-						className="w-[23px] h-[22px] cursor-pointer"
-					/>
-
-					<Image
-						src={menuView}
-						alt="menu-view"
-						width={23}
-						height={22}
-						className="w-[23px] h-[22px] cursor-pointer"
-					/>
-
-					<Image
-						src={gridView}
-						alt="grid-view"
-						width={23}
-						height={22}
-						className="w-[23px] h-[22px] cursor-pointer"
-					/>
-				</div>
+		<div className="flex flex-col lg:flex-row items-center lg:pl-14 lg:justify-around w-full pb-20">
+			<div className="flex flex-col justify-between w-[60%]">
+				<DiscoverSectionHeader />
+				<div className="grid grid-cols-1 gap-20">{renderPosts}</div>
 			</div>
 
 			<div className="flex w-[40%]"></div>
