@@ -19,14 +19,14 @@ function DiscoverCard({ userImage, userName, title, desc, slug, date, mainImage 
 	});
 
 	return (
-		<div className="flex gap-6">
+		<div className="flex gap-6 flex-col lg:flex-row">
 			<div className="flex flex-col justify-between">
 				<Image
 					src={mainImage}
 					width={301}
 					height={196}
 					alt={title}
-					className=" min-w-[301px] min-h-[196px]"
+					className="lg:min-w-[301px] lg:min-h-[196px] min-w-full mb-6 lg:mb-0"
 				/>
 				<p className="text-[16px] text-[#3B3B3B] font-main">{formattedDate}</p>
 			</div>

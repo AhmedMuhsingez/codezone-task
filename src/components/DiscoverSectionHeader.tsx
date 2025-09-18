@@ -7,11 +7,17 @@ type Props = {};
 
 function DiscoverSectionHeader({}: Props) {
 	return (
-		<div className="flex justify-between pt-10 pb-16">
-			<div className="flex gap-4">
-				<span className="font-condensed text-6xl font-bold">KEŞFET</span>
+		<div className="flex justify-between pt-10 pb-8 lg:pb-16">
+			<div className="flex gap-4 items-center">
+				<span className="font-condensed text-[40px] lg:text-6xl font-bold">KEŞFET</span>
 
-				<Image src={discover} alt="discover" width={53} height={53} />
+				<Image
+					src={discover}
+					alt="discover"
+					width={53}
+					height={53}
+					className="lg:w-[53px] lg:h-[53px] w-[42px] h-[42px] "
+				/>
 			</div>
 
 			<div className="flex gap-6 items-center">

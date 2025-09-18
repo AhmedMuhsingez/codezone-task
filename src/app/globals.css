@@ -20,6 +20,14 @@
 	}
 }
 
+@utility no-scrollbar {
+	&::-webkit-scrollbar {
+		display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+	}
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
 ::selection {
 	background-color: #f0e74d;
 	color: #171717;
