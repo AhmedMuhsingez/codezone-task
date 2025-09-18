@@ -36,7 +36,7 @@ function DiscoverCardsFilter({ setFilter, filter }: Props) {
 								isActive
 									? "bg-[#F0E74D] text-black font-bold"
 									: "text-white border border-white"
-							} ${isFirst && "ms-6"}
+							} ${isFirst && "ms-6 lg:ms-0"}
 							}`}
 						>
 							{item.name}
