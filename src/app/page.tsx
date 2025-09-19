@@ -1,4 +1,5 @@
 import DiscoverSection from "@/components/sections/DiscoverSection";
+import Footer from "@/components/sections/Footer";
 import HeroSwiper from "@/components/sections/HeroSwiper";
 import MonthlyTopSection from "@/components/sections/MonthlyTopSection";
 import TrendsSection from "@/components/sections/TrendsSection";
@@ -18,6 +19,9 @@ export default async function Home() {
 			<TrendsSection />
 			<MonthlyTopSection />
 			<DiscoverSection posts={data} />
+			<div className="block lg:hidden  px-6 pb-10">
+				<Footer />
+			</div>
 		</>
 	);
 }

@@ -1,31 +1,10 @@
 import Image from "next/image";
 import search from "../assets/search-icon.png";
+import { LINKS } from "@/data/data";
 
 type Props = {};
 
 const Navbar = (props: Props) => {
-	const NAVBAR_LINKS = [
-		{
-			name: "HABERLER",
-			href: "/",
-		},
-		{
-			name: "ETKİNLİKLER",
-			href: "/",
-		},
-		{
-			name: "MÜZİKLER",
-			href: "/",
-		},
-		{
-			name: "VİDEOLAR",
-			href: "/",
-		},
-		{
-			name: "İLETİŞİM",
-			href: "/",
-		},
-	];
 	return (
 		<div className="bg-[#1212121A] lg:border-b border-[#2A2A2A] flex items-center p-4 lg:px-20 lg:py-2 sticky top-0 left-0 right-0 justify-between backdrop-blur-xl z-[99]">
 			<div className="flex items-center gap-20">
@@ -40,7 +19,7 @@ const Navbar = (props: Props) => {
 				</a>
 
 				<div className="lg:flex hidden">
-					{NAVBAR_LINKS.map((link) => (
+					{LINKS.map((link) => (
 						<a href={link.href} className="mx-4 font-normal" key={link.name}>
 							{link.name}
 						</a>
