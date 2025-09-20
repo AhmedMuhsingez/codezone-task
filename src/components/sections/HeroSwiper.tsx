@@ -68,7 +68,7 @@ export default function HeroSwiper() {
 				{slides}
 
 				<Image
-					className="absolute bottom-0 left-0 z-10 w-full pointer-events-none select-none"
+					className="absolute bottom-14 lg:bottom-4 left-0 z-10 w-full pointer-events-none"
 					src={swiperEffect}
 					alt="effect"
 				/>

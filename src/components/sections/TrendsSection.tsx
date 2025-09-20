@@ -62,8 +62,8 @@ function TrendsSection({}: Props) {
 		);
 	});
 	return (
-		<div className="py-20 pl-4 pr-10 lg:pl-14 lg:pr-14 flex flex-col gap-16">
-			<div className="flex items-center justify-center lg:justify-start gap-6">
+		<div className="py-20  flex flex-col gap-16">
+			<div className="lg:pl-14 flex items-center justify-center lg:justify-start gap-3">
 				<span className="font-condensed font-bold text-[40px] lg:text-6xl">TRENDLER</span>
 				<Image
 					src={icon}
@@ -74,12 +74,14 @@ function TrendsSection({}: Props) {
 				/>
 			</div>
 
-			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 gap-y-16">
-				{renderTrends}
-			</div>
+			<div className="pl-4 pr-10 lg:pl-14 lg:pr-14">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 gap-y-16">
+					{renderTrends}
+				</div>
 
-			<div className="flex items-center justify-center mt-10 lg:mt-0">
-				<ShadowButton name="Tümünü Gör" shadow={false} color="white" />
+				<div className="flex items-center justify-center mt-10 lg:mt-0">
+					<ShadowButton name="Tümünü Gör" shadow={false} color="white" />
+				</div>
 			</div>
 		</div>
 	);

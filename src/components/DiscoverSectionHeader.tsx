@@ -3,11 +3,13 @@ import discover from "../assets/discover-section/discover.png";
 import search from "@/assets/search-icon.png";
 import menuView from "../assets/discover-section/menu-view.png";
 import gridView from "../assets/discover-section/grid-view.png";
-type Props = {};
+type Props = {
+	isMainPage?: boolean;
+};
 
-function DiscoverSectionHeader({}: Props) {
+function DiscoverSectionHeader({ isMainPage = false }: Props) {
 	return (
-		<div className="flex justify-between">
+		<div className={`flex justify-between ${isMainPage ? "px-6" : ""}`}>
 			<div className="flex gap-4 items-center">
 				<span className="font-condensed text-[40px] lg:text-6xl font-bold">KEŞFET</span>
 

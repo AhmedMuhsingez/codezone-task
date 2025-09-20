@@ -8,7 +8,7 @@ type Props = {
 function Footer({ isMainPage }: Props) {
 	return (
 		<div
-			className={`flex justify-between gap-4 font-main flex-col ${
+			className={`flex justify-between gap-10 font-main flex-col ${
 				isMainPage ? "flex-col" : "lg:flex-row px-6 py-10 lg:px-20 mt-10"
 			}`}
 		>

@@ -23,8 +23,8 @@ function DiscoverCardsFilter({ setFilter, filter, noTitle = false }: Props) {
 
 	return (
 		<div
-			className={`flex flex-col gap-10 pb-16 relative max-w-[100%] ${
-				noTitle ? "pt-16" : ""
+			className={`flex flex-col gap-6 lg:gap-10 pb-16 relative max-w-[100%] ${
+				noTitle ? "pt-8" : ""
 			}`}
 		>
 			<span
