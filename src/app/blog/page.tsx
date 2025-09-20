@@ -7,6 +7,7 @@ import { PostsResponse } from "@/types/types";
 import BlogSwiper from "@/components/sections/BlogSwiper";
 import DiscoverSection from "@/components/sections/DiscoverSection";
 import Footer from "@/components/sections/Footer";
+import ClipsSection from "@/components/sections/ClipsSection";
 type Props = {};
 
 async function page({}: Props) {
@@ -45,6 +46,8 @@ async function page({}: Props) {
 			</div>
 
 			<DiscoverSection posts={data} />
+
+			<ClipsSection />
 
 			<Footer isMainPage={false} />
 		</>

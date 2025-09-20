@@ -10,7 +10,6 @@ import user1 from "@/assets/trends-section/user1.png";
 import user2 from "@/assets/trends-section/user2.png";
 import user3 from "@/assets/trends-section/user3.png";
 import ShadowButton from "../ShadowButton";
-import peaceSign from "@/assets/blog/peace-sign.png";
 
 type Props = {
 	posts: PostsResponse;
@@ -43,8 +42,6 @@ function DiscoverSection({ posts }: Props) {
 		});
 
 	const hasLoadMore = posts.filter((post) => post.attributes.tags.includes(filter)).length > 8;
-	const showPeaceSign =
-		posts.filter((post) => post.attributes.tags.includes(filter)).length > 2;
 
 	return (
 		<div className="lg:p-20 relative">
@@ -62,21 +59,11 @@ function DiscoverSection({ posts }: Props) {
 
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 p-6 lg:p-0 relative">
 				{renderPosts}
-
-				{showPeaceSign && (
-					<Image
-						src={peaceSign}
-						alt="peace-sign"
-						className="lg:hidden block absolute bottom-0 right-0 -z-10"
-					/>
-				)}
 			</div>
 
-			{hasLoadMore && (
-				<div className="w-full flex justify-center py-10 lg:py-20">
-					<ShadowButton color="white" shadow={false} name="Daha Fazla Gör" />
-				</div>
-			)}
+			<div className="w-full flex justify-center pt-10 pb-10 lg:pb-0">
+				<ShadowButton color="white" shadow={false} name="Daha Fazla Gör" />
+			</div>
 		</div>
 	);
 }
