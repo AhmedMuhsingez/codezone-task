@@ -3,9 +3,10 @@
 type Props = {
 	setFilter: (filter: string) => void;
 	filter: string;
+	noTitle?: boolean;
 };
 
-function DiscoverCardsFilter({ setFilter, filter }: Props) {
+function DiscoverCardsFilter({ setFilter, filter, noTitle = false }: Props) {
 	const FILTERS = [
 		{ id: 1, name: "Türk Rap" },
 		{ id: 2, name: "Yabancı Rap" },
@@ -21,10 +22,16 @@ function DiscoverCardsFilter({ setFilter, filter }: Props) {
 	};
 
 	return (
-		<div className="flex flex-col gap-10 pt-10 pb-16 relative max-w-[100%]">
-			<span className="font-condensed text-[40px] font-bold px-6 lg:px-0">
-				NE GÖRMEK İSTERSİN?
-			</span>
+		<div
+			className={`flex flex-col gap-10 pb-16 relative max-w-[100%] ${
+				noTitle ? "pt-16" : ""
+			}`}
+		>
+			{!noTitle && (
+				<span className="font-condensed text-[40px] font-bold px-6 lg:px-0">
+					NE GÖRMEK İSTERSİN?
+				</span>
+			)}
 
 			<div className="flex gap-4 lg:flex-wrap flex-nowrap overflow-x-scroll lg:overflow-x-visible no-scrollbar">
 				{FILTERS.map((item) => {

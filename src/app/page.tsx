@@ -1,4 +1,4 @@
-import DiscoverSection from "@/components/sections/DiscoverSection";
+import DiscoverSection from "@/components/sections/DiscoverSectionMainPage";
 import Footer from "@/components/sections/Footer";
 import HeroSwiper from "@/components/sections/HeroSwiper";
 import MonthlyTopSection from "@/components/sections/MonthlyTopSection";

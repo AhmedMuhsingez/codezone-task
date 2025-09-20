@@ -1,22 +1,20 @@
 import Breadcrumb from "@/components/Breadcrumb";
 
 type Props = {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 };
 
-function page({ params }: Props) {
-	console.log(params);
+export default async function page({ params }: Props) {
+	const { slug } = await params;
 	return (
 		<div>
 			<Breadcrumb
 				items={[
 					{ name: "ANA SAYFA", href: "/" },
 					{ name: "Blog", href: "/blog" },
-					{ name: params.slug },
+					{ name: slug },
 				]}
 			/>
 		</div>
 	);
 }
-
-export default page;

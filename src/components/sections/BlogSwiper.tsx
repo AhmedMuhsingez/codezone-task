@@ -20,7 +20,7 @@ function BlogSwiper({ data }: Props) {
 	const activePost = data[activeIndex];
 
 	return (
-		<div className="flex flex-col xl:flex-row justify-between pb-10">
+		<div className="flex flex-col xl:flex-row justify-between pb-12">
 			<div id="swiper-container" className="xl:max-w-[55%]">
 				<Swiper
 					spaceBetween={20}
@@ -77,10 +77,11 @@ function BlogSwiper({ data }: Props) {
 				<div className="font-bold flex flex-col xl:flex-row xl:justify-between justify-center xl:items-start pt-8 xl:px-10">
 					<Link
 						href={`/blog/${activePost.attributes.slug}`}
-						className="xl:max-w-[60%] font-condensed font-bold text-[25px]"
+						className="xl:max-w-[60%] font-condensed font-bold text-[25px] line-clamp-3"
 					>
-						{activePost.attributes.desc.toUpperCase().substring(0, 80)} ...
+						{activePost.attributes.desc.toUpperCase()}
 					</Link>
+
 					<div className="custom-blog-pagination flex justify-center py-14 xl:py-0 items-center gap-3"></div>
 				</div>
 			</div>
@@ -90,7 +91,7 @@ function BlogSwiper({ data }: Props) {
 					<div key={idx} className="flex gap-4 items-center z-50">
 						<Link
 							href={`/blog/${post.attributes.slug}`}
-							className="h-full min-w-[175px]"
+							className="h-[104px] lg:h-full min-w-[185px] lg:min-w-[175px]"
 						>
 							<Image
 								src={post.attributes.img}
@@ -103,9 +104,9 @@ function BlogSwiper({ data }: Props) {
 
 						<Link
 							href={`/blog/${post.attributes.slug}`}
-							className="text-[20px] xl:text-[25px] font-bold font-condensed tracking-normal"
+							className="text-[20px] xl:text-[25px] font-bold font-condensed tracking-normal line-clamp-3"
 						>
-							{post.attributes.desc.toUpperCase().substring(0, 70)} ...
+							{post.attributes.desc.toUpperCase()}
 						</Link>
 					</div>
 				))}
