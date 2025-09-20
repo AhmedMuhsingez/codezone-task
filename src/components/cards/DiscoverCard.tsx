@@ -50,7 +50,7 @@ function DiscoverCard({ userImage, userName, title, desc, slug, date, mainImage 
 				<div className="w-full h-[1px] bg-[#3B3B3B]" />
 
 				<Link
-					href={`/discover/${slug}`}
+					href={`/blog/${slug}`}
 					className="text-[16px] font-main inline-block transition duration-300 hover:text-gray-400"
 				>
 					Daha Fazla Oku
