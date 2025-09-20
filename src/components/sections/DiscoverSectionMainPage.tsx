@@ -4,7 +4,7 @@ import DiscoverSectionHeader from "../DiscoverSectionHeader";
 import user1 from "@/assets/trends-section/user1.png";
 import user2 from "@/assets/trends-section/user2.png";
 import user3 from "@/assets/trends-section/user3.png";
-import DiscoverCard from "../cards/DiscoverCard";
+import DiscoverCardMainPage from "../cards/DiscoverCardMainPage";
 import DiscoverCardsFilter from "../DiscoverCardsFilter";
 import { useState } from "react";
 import Footer from "./Footer";
@@ -27,7 +27,7 @@ function DiscoverSectionMainPage({ posts }: Props) {
 
 			return (
 				<div key={post._id}>
-					<DiscoverCard
+					<DiscoverCardMainPage
 						userImage={userImage}
 						userName={userName}
 						title={post.attributes.title}
@@ -44,12 +44,12 @@ function DiscoverSectionMainPage({ posts }: Props) {
 			className="flex  flex-col-reverse lg:flex-row lg:justify-around w-full pb-20 lg:px-0"
 			id="discoverSection"
 		>
-			<div className="flex flex-col justify-between lg:w-[60%] px-6 gap-8 lg:gap-20">
+			<div className="flex flex-col justify-between lg:w-[60%] px-6 gap-10 lg:gap-20">
 				<DiscoverSectionHeader />
 
 				<div className="grid grid-cols-1 gap-20">{renderPosts}</div>
 
-				<div className="w-full flex justify-center">
+				<div className="w-full flex justify-center pt-10 lg:pt-0">
 					<ShadowButton shadow={false} name="Daha Fazla Gör" color="white" />
 				</div>
 			</div>
@@ -57,8 +57,8 @@ function DiscoverSectionMainPage({ posts }: Props) {
 			<div className="flex flex-col lg:max-w-[30%]">
 				<DiscoverCardsFilter setFilter={setFilter} filter={filter} />
 
-				<div className="lg:block hidden">
-					<Footer />
+				<div className="lg:block hidden pt-20">
+					<Footer isMainPage />
 				</div>
 			</div>
 		</div>

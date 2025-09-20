@@ -27,11 +27,13 @@ function DiscoverCardsFilter({ setFilter, filter, noTitle = false }: Props) {
 				noTitle ? "pt-16" : ""
 			}`}
 		>
-			{!noTitle && (
-				<span className="font-condensed text-[40px] font-bold px-6 lg:px-0">
-					NE GÖRMEK İSTERSİN?
-				</span>
-			)}
+			<span
+				className={`${
+					noTitle ? "lg:hidden" : "lg:block"
+				} font-condensed text-[40px] font-bold px-6 lg:px-0`}
+			>
+				NE GÖRMEK İSTERSİN?
+			</span>
 
 			<div className="flex gap-4 lg:flex-wrap flex-nowrap overflow-x-scroll lg:overflow-x-visible no-scrollbar">
 				{FILTERS.map((item) => {

@@ -20,7 +20,7 @@ function BlogSwiper({ data }: Props) {
 	const activePost = data[activeIndex];
 
 	return (
-		<div className="flex flex-col xl:flex-row justify-between pb-12">
+		<div className="flex flex-col xl:flex-row justify-between pt-10 lg:pt-0 pb-12">
 			<div id="swiper-container" className="xl:max-w-[55%]">
 				<Swiper
 					spaceBetween={20}
@@ -43,14 +43,14 @@ function BlogSwiper({ data }: Props) {
 								alt={post.attributes.title}
 								width={600}
 								height={430}
-								className="w-full h-[430px] object-cover"
+								className="w-full h-[310px] xl:h-[430px] object-cover"
 							/>
 						</SwiperSlide>
 					))}
 
 					<div
 						key={activePost.attributes.title}
-						className="absolute bottom-10 right-10 left-10 flex justify-between text-white z-50 items-center"
+						className="absolute bottom-10 right-3 left-3 xl:right-10 xl:left-10 flex justify-between text-white z-50 items-center"
 					>
 						<Link
 							href={`/blog/${activePost.attributes.slug}`}
@@ -82,7 +82,7 @@ function BlogSwiper({ data }: Props) {
 						{activePost.attributes.desc.toUpperCase()}
 					</Link>
 
-					<div className="custom-blog-pagination flex justify-center py-14 xl:py-0 items-center gap-3"></div>
+					<div className="custom-blog-pagination flex justify-center py-14 xl:py-0 items-center gap-2 xl:gap-3"></div>
 				</div>
 			</div>
 
@@ -104,7 +104,7 @@ function BlogSwiper({ data }: Props) {
 
 						<Link
 							href={`/blog/${post.attributes.slug}`}
-							className="text-[20px] xl:text-[25px] font-bold font-condensed tracking-normal line-clamp-3"
+							className="text-[20px] xl:text-[25px] font-bold font-condensed tracking-normal line-clamp-4 leading-6"
 						>
 							{post.attributes.desc.toUpperCase()}
 						</Link>

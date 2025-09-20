@@ -10,7 +10,16 @@ type Props = {
 	date: Date;
 	mainImage: string;
 };
-function DiscoverCard({ userImage, userName, title, desc, slug, date, mainImage }: Props) {
+
+function DiscoverCardMainPage({
+	userImage,
+	userName,
+	title,
+	desc,
+	slug,
+	date,
+	mainImage,
+}: Props) {
 	const formattedDate = date.toLocaleDateString("tr-TR", {
 		day: "numeric",
 		month: "long",
@@ -18,8 +27,19 @@ function DiscoverCard({ userImage, userName, title, desc, slug, date, mainImage 
 	});
 
 	return (
-		<div className="flex gap-6 flex-col">
-			<div className="flex flex-col-reverse lg:flex-col gap-5">
+		<div className="flex gap-6 flex-col lg:flex-row">
+			<div className="flex flex-col justify-between">
+				<Image
+					src={mainImage}
+					width={301}
+					height={196}
+					alt={title}
+					className="lg:min-w-[301px] lg:min-h-[196px] min-w-full mb-6 lg:mb-0"
+				/>
+				<p className="text-[16px] text-[#3B3B3B] font-main">{formattedDate}</p>
+			</div>
+
+			<div className="flex flex-col justify-between gap-5">
 				<div className="flex items-center gap-3">
 					<Image
 						src={userImage}
@@ -31,20 +51,7 @@ function DiscoverCard({ userImage, userName, title, desc, slug, date, mainImage 
 					<span className="text-[16px] font-main">{userName}</span>
 				</div>
 
-				<div className="flex flex-col gap-5">
-					<Image
-						src={mainImage}
-						width={301}
-						height={196}
-						alt={title}
-						className="lg:min-h-[196px] min-w-full lg:mb-0"
-					/>
-					<p className="text-[16px] text-[#3B3B3B] font-main">{formattedDate}</p>
-				</div>
-			</div>
-
-			<div className="flex flex-col justify-between gap-5">
-				<p className="mt-1 line-clamp-4 font-condensed text-[20px] font-bold letter tracking-tight">
+				<p className="mt-1 line-clamp-4 font-condensed text-[25px] font-bold letter tracking-tight">
 					{desc.toLocaleUpperCase()}
 				</p>
 
@@ -61,4 +68,4 @@ function DiscoverCard({ userImage, userName, title, desc, slug, date, mainImage 
 	);
 }
 
-export default DiscoverCard;
+export default DiscoverCardMainPage;

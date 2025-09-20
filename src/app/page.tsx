@@ -19,8 +19,9 @@ export default async function Home() {
 			<TrendsSection />
 			<MonthlyTopSection />
 			<DiscoverSection posts={data} />
+
 			<div className="block lg:hidden  px-6 pb-10">
-				<Footer />
+				<Footer isMainPage />
 			</div>
 		</>
 	);

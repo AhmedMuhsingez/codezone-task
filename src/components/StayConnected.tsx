@@ -1,16 +1,28 @@
 import Image from "next/image";
 import arrow from "../assets/arrow-right.png";
+import logo from "@/assets/logo.png";
+type Props = {
+	isMainPage?: boolean;
+};
 
-type Props = {};
-
-function StayConnected({}: Props) {
+function StayConnected({ isMainPage }: Props) {
 	return (
-		<div className="flex flex-col lg:items-center gap-8">
-			<span className="font-condensed font-bold text-[25px] lg:text-[40px]">
+		<div className="flex flex-col lg:items-start gap-16 lg:gap-8">
+			{!isMainPage && <Image src={logo} alt="logo" className="w-[250px] hidden lg:block" />}
+
+			<span
+				className={`font-condensed font-bold text-[25px] ${
+					isMainPage ? "lg:text-[40px]" : "lg:text-[25px]"
+				}`}
+			>
 				GELİŞMELERDEN İLK SEN HABERDAR OL!
 			</span>
 
-			<div className="flex justify-between w-full items-center border-b border-[#3B3B3B] pb-6">
+			<div
+				className={`flex justify-between w-full items-center border-b border-[#3B3B3B] pb-6 ${
+					isMainPage ? "" : "lg:min-w-lg"
+				}`}
+			>
 				<input
 					placeholder="EMAIL"
 					className="focus:outline-none text-white font-main font-bold text-[14px] placeholder:text-white"

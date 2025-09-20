@@ -6,6 +6,7 @@ import lowerShapeRight from "@/assets/blog/lower-shape-right.png";
 import { PostsResponse } from "@/types/types";
 import BlogSwiper from "@/components/sections/BlogSwiper";
 import DiscoverSection from "@/components/sections/DiscoverSection";
+import Footer from "@/components/sections/Footer";
 type Props = {};
 
 async function page({}: Props) {
@@ -13,10 +14,15 @@ async function page({}: Props) {
 		next: { revalidate: 60 },
 	});
 	const data: PostsResponse = await res.json();
+
 	return (
 		<>
-			<div className="relative lg:p-20 p-4 bg-[url('/bg-effect.png')] w-dvw bg-[#F0E74D] text-black font-main pointer-events-auto">
-				<Image src={bgWord} alt="bg-word" className="absolute top-0 right-0 " />
+			<div className="relative lg:p-20 lg:pb-10 p-4 bg-[url('/bg-effect.png')] w-dvw bg-[#F0E74D] text-black font-main pointer-events-auto">
+				<Image
+					src={bgWord}
+					alt="bg-word"
+					className="hidden xl:block absolute top-0 right-0 "
+				/>
 
 				<Breadcrumb items={[{ name: "ANA SAYFA", href: "/" }, { name: "BLOG" }]} />
 
@@ -29,16 +35,18 @@ async function page({}: Props) {
 				<Image
 					src={lowerShapeLeft}
 					alt="lower-shape-left"
-					className="absolute min-w-full bottom-0 left-0 pointer-events-none"
+					className="absolute 2xl:min-w-full -bottom-1 -left-1/2 translate-x-1/2 lg:bottom-0 lg:translate-x-0 lg:left-0 pointer-events-none"
 				/>
 				<Image
 					src={lowerShapeRight}
 					alt="lower-shape-right"
-					className="absolute min-w-full bottom-0 right-0 pointer-events-none"
+					className="absolute 2xl:min-w-full 2xl:-bottom-10 bottom-0 right-0 pointer-events-none hidden lg:block"
 				/>
 			</div>
 
 			<DiscoverSection posts={data} />
+
+			<Footer isMainPage={false} />
 		</>
 	);
 }
