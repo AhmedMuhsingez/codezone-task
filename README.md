@@ -4,10 +4,6 @@ A modern, responsive web application built with Next.js 15 that showcases Turkis
 
 # Link: https://codezone-task.vercel.app/
 
-## 🎯 Project Overview
-
-This application serves as a comprehensive platform for rap music enthusiasts, featuring dynamic content sections, interactive swipers, responsive design, and real-time data integration. The platform provides users with trending content, monthly favorites, discovery features, and community engagement tools.
-
 ## 🏗️ Technical Specifications
 
 ### Core Technologies
