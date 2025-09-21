@@ -30,7 +30,7 @@ function DiscoverCardsFilter({ setFilter, filter, noTitle = false }: Props) {
 			<span
 				className={`${
 					noTitle ? "lg:hidden" : "lg:block"
-				} font-condensed text-[40px] font-bold px-6 lg:px-0`}
+				} font-condensed text-[30px] lg:text-[40px] font-bold px-6 lg:px-0`}
 			>
 				NE GÖRMEK İSTERSİN?
 			</span>

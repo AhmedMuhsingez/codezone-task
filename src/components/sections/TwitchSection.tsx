@@ -9,7 +9,7 @@ type Props = {};
 
 const TwitchSection = (props: Props) => {
 	return (
-		<div className="w-full h-[642px] relative flex flex-col items-center bg-[url('/twitch-background.png')] bg-cover bg-center overflow-hidden">
+		<div className="w-full h-[536px] lg:h-[642px] relative flex flex-col items-center bg-[url('/twitch-background.png')] bg-cover bg-center overflow-hidden">
 			<Image src={banner} alt="banner" className="w-80 lg:w-[504px]" priority={true} />
 
 			<FollowUsBox />
@@ -22,13 +22,17 @@ const TwitchSection = (props: Props) => {
 			<Image
 				src={male}
 				alt="male-overlay"
-				className="block lg:hidden absolute  -bottom-20 -left-30"
+				className="block lg:hidden absolute  -bottom-10 -left-14"
+				width={283}
+				height={293}
 				priority={true}
 			/>
 			<Image
 				src={female}
 				alt="overlay"
-				className="block lg:hidden absolute -bottom-40 -right-20"
+				className="block lg:hidden absolute -bottom-20 -right-10"
+				width={221}
+				height={287}
 				priority={true}
 			/>
 

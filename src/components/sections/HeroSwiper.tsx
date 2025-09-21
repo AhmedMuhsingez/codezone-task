@@ -84,7 +84,7 @@ export default function HeroSwiper() {
 						{currentSlide.title}
 					</h1>
 
-					<p className="text-[14px] lg:text-[16px] font-normal font-main max-w-[380px] transition-all duration-500">
+					<p className="text-[14px] lg:text-[16px] font-normal font-main max-w-[380px] transition-all duration-500 px-10 lg:px-0 leading-[100%] lg:leading-normal">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 						veniam, quis nostrud exercitation ullamco laboris nisi
