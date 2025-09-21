@@ -25,7 +25,9 @@ function StayConnected({ isOnSide }: Props) {
 			>
 				<input
 					placeholder="EMAIL"
-					className="focus:outline-none text-white font-main font-bold text-[14px] placeholder:text-white"
+					type="email"
+					id="email"
+					className="focus:outline-none text-white font-main font-bold text-[14px] placeholder:text-white lg:min-w-sm"
 				/>
 
 				<button className="flex items-center gap-2 text-[#F0E74D] font-main font-bold text-[14px] group cursor-pointer">

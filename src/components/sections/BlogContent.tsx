@@ -17,14 +17,28 @@ function BlogContent({}: Props) {
 	});
 	return (
 		<div className="flex flex-col gap-10">
-			<p className="font-condensed font-bold text-[40px] lg:text-[60px]" id="title">
+			<p
+				className="font-condensed font-bold text-[40px] lg:text-[60px] leading-[89%]"
+				id="title"
+			>
 				LOREM IPSUM DOLOR SIT AMET CONSECTETUR EDIPICING SIR ELIT
 			</p>
 
-			<p className="font-main text-[25px] " id="desc">
+			<p className="font-main text-[25px] font-bold leading-[104%]" id="desc">
 				Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in
 				hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur,
 				ultrices mauris.
+			</p>
+
+			<p className="font-main text-[14px] lg:text-[16px]" id="desc">
+				Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in
+				hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur,
+				ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
+				Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur
+				pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo
+				lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod
+				erat placerat. In iaculis arcu eros, eget tempus orci facilisis id. Praesent lorem
+				orci, mattis non efficitur id, ultricies vel nibh.
 			</p>
 
 			<Image className="w-full" src={blogImage} alt="blog" />

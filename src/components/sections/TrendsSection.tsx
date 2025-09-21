@@ -5,9 +5,14 @@ import user2 from "@/assets/trends-section/user2.png";
 import user3 from "@/assets/trends-section/user3.png";
 import ShadowButton from "../ShadowButton";
 import TrendsCard from "../cards/TrendsCard";
-type Props = {};
+import TrendsCardCustom from "../cards/TrendsCardCustom";
+type Props = {
+	amountOfItems?: number;
+	customTitleStyle?: string;
+	customCard?: boolean;
+};
 
-function TrendsSection({}: Props) {
+function TrendsSection({ amountOfItems = 6, customTitleStyle, customCard }: Props) {
 	const DATA = [
 		{
 			id: 1,
@@ -50,8 +55,16 @@ function TrendsSection({}: Props) {
 		},
 	];
 
-	const renderTrends = DATA.map((item) => {
-		return (
+	const renderTrends = DATA.splice(0, amountOfItems).map((item) => {
+		return customCard ? (
+			<TrendsCardCustom
+				key={item.id}
+				description={item.description}
+				id={item.id}
+				image={item.image}
+				username={item.username}
+			/>
+		) : (
 			<TrendsCard
 				key={item.id}
 				description={item.description}
@@ -63,8 +76,16 @@ function TrendsSection({}: Props) {
 	});
 	return (
 		<div className="py-20  flex flex-col gap-16">
-			<div className="lg:pl-14 flex items-center justify-center lg:justify-start gap-3">
-				<span className="font-condensed font-bold text-[40px] lg:text-6xl">TRENDLER</span>
+			<div
+				className={`flex items-center justify-center lg:justify-start gap-3 ${
+					customTitleStyle ? "" : "lg:pl-14 "
+				}`}
+			>
+				<span
+					className={`font-condensed font-bold text-[40px] lg:text-6xl ${customTitleStyle}`}
+				>
+					TRENDLER
+				</span>
 				<Image
 					src={icon}
 					alt="trends-icon"
@@ -74,8 +95,12 @@ function TrendsSection({}: Props) {
 				/>
 			</div>
 
-			<div className="pl-4 pr-10 lg:pl-14 lg:pr-14">
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 gap-y-16">
+			<div className={`${customCard ? "" : "pl-4 pr-10 lg:pl-14 lg:pr-14"}`}>
+				<div
+					className={`grid grid-cols-1 md:grid-cols-2 gap-y-16 gap-10 ${
+						customCard ? "" : "lg:grid-cols-3"
+					}`}
+				>
 					{renderTrends}
 				</div>
 

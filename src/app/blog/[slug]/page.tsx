@@ -4,6 +4,8 @@ import Image from "next/image";
 import heart from "@/assets/blog/heart.png";
 import comment from "@/assets/blog/comment.png";
 import Link from "next/link";
+import MoreContent from "@/components/sections/MoreContent";
+import TrendsSection from "@/components/sections/TrendsSection";
 
 type Props = {
 	params: Promise<{ slug: string }>;
@@ -11,6 +13,7 @@ type Props = {
 
 export default async function page({ params }: Props) {
 	const { slug } = await params;
+
 	const BREADCRUMB_DATA = [
 		{ name: "ANA SAYFA", href: "/" },
 		{ name: "Blog", href: "/blog" },
@@ -39,9 +42,9 @@ export default async function page({ params }: Props) {
 				</ol>
 			</nav>
 
-			<div className="flex flex-col lg:flex-row justify-between">
-				<div className="lg:max-w-[60%]">
-					<div className="flex gap-4 pb-10">
+			<div className="flex flex-col lg:flex-row justify-between gap-20 lg:gap-32 xl:gap-40">
+				<div className="lg:max-w-[50%] flex flex-col gap-10">
+					<div className="flex gap-4">
 						<span className="icon-[iconamoon--eye-bold] text-2xl"></span>
 						<span className="font-main">12.094</span>
 					</div>
@@ -64,6 +67,10 @@ export default async function page({ params }: Props) {
 							</div>
 						</div>
 					</div>
+
+					<MoreContent />
+
+					<TrendsSection customCard amountOfItems={4} customTitleStyle="text-[60px]" />
 				</div>
 
 				<div className="pt-20 lg:pt-0">
