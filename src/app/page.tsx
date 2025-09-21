@@ -5,6 +5,13 @@ import MonthlyTopSection from "@/components/sections/MonthlyTopSection";
 import TrendsSection from "@/components/sections/TrendsSection";
 import TwitchSection from "@/components/sections/TwitchSection";
 import { PostsResponse } from "@/types/types";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	alternates: {
+		canonical: "/",
+	},
+};
 
 export default async function Home() {
 	const res = await fetch("https://dummyjson.com/c/a7c4-016a-47aa-8241", {
