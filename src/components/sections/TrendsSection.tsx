@@ -75,7 +75,7 @@ function TrendsSection({ amountOfItems = 6, customTitleStyle, customCard }: Prop
 		);
 	});
 	return (
-		<div className="py-20  flex flex-col gap-16">
+		<div className={`flex flex-col gap-16 ${customTitleStyle ? "pt-20" : "py-20"}`}>
 			<div
 				className={`flex items-center justify-center lg:justify-start gap-3 ${
 					customTitleStyle ? "" : "lg:pl-14 "
