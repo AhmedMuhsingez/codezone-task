@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type Props = {
 	name?: string;
 	shadow?: boolean;
@@ -6,7 +8,8 @@ type Props = {
 
 function ShadowButton({ name, shadow = true, color = "#F0E74D" }: Props) {
 	return (
-		<div
+		<Link
+			href="/blog"
 			style={{
 				filter: shadow ? "drop-shadow(8px 8px 0px #000000)" : "",
 			}}
@@ -21,7 +24,7 @@ function ShadowButton({ name, shadow = true, color = "#F0E74D" }: Props) {
 			>
 				{name ?? "Devamını Oku"}
 			</button>
-		</div>
+		</Link>
 	);
 }
 

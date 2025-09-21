@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 type Props = {
 	id: number;
 	image: StaticImageData;
@@ -33,12 +34,12 @@ const TrendsCard = ({ id, image, username, description }: Props) => {
 
 				<div className="w-full h-[1px] bg-[#3B3B3B]" />
 
-				<a
-					href=""
+				<Link
+					href={`/blog/${id}`}
 					className="bg-none text-[16px] w-fit cursor-pointer transition duration-300 hover:text-gray-400 font-main"
 				>
 					Daha Fazla Oku
-				</a>
+				</Link>
 			</div>
 		</div>
 	);

@@ -36,7 +36,7 @@ export default function HeroSwiper() {
 				<img
 					src={item.image}
 					alt={item.title}
-					className="relative select-none w-full h-[65vh] object-cover lg:h-[100vh] mt-80 lg:mt-0"
+					className="relative select-none w-full object-cover h-[65vh] lg:h-[100vh] mt-80 lg:mt-0"
 				/>
 			</SwiperSlide>
 		);
@@ -58,7 +58,7 @@ export default function HeroSwiper() {
 				}}
 				modules={[Pagination, Navigation]}
 				onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-				className="mySwiper absolute inset-0 "
+				className="mySwiper absolute inset-0"
 				navigation={{
 					nextEl: ".custom-next",
 					prevEl: ".custom-prev",
@@ -68,8 +68,9 @@ export default function HeroSwiper() {
 				{slides}
 
 				<Image
-					className="absolute bottom-14 lg:bottom-4 left-0 z-10 w-full pointer-events-none"
+					className="absolute bottom-14 left-0 w-full z-10 pointer-events-none"
 					src={swiperEffect}
+					width={800}
 					alt="effect"
 				/>
 			</Swiper>
