@@ -45,7 +45,7 @@ function DiscoverSectionMainPage({ posts }: Props) {
 			id="discoverSection"
 		>
 			<div className="flex flex-col justify-between lg:w-[60%] gap-10 lg:gap-20">
-				<DiscoverSectionHeader isMainPage />
+				<DiscoverSectionHeader isOnSide />
 
 				<div className="block lg:hidden">
 					<DiscoverCardsFilter setFilter={setFilter} filter={filter} />
@@ -63,7 +63,7 @@ function DiscoverSectionMainPage({ posts }: Props) {
 					<DiscoverCardsFilter setFilter={setFilter} filter={filter} />{" "}
 				</div>
 				<div className="lg:block hidden pt-20">
-					<Footer isMainPage />
+					<Footer isOnSide />
 				</div>
 			</div>
 		</div>

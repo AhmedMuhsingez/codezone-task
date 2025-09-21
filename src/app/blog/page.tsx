@@ -49,7 +49,7 @@ async function page({}: Props) {
 
 			<ClipsSection />
 
-			<Footer isMainPage={false} />
+			<Footer />
 		</>
 	);
 }

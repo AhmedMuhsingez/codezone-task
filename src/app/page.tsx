@@ -21,7 +21,7 @@ export default async function Home() {
 			<DiscoverSection posts={data} />
 
 			<div className="block lg:hidden  px-6 pb-10">
-				<Footer isMainPage />
+				<Footer isOnSide />
 			</div>
 		</>
 	);

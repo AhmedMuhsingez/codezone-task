@@ -2,17 +2,17 @@ import Image from "next/image";
 import arrow from "../assets/arrow-right.png";
 import logo from "@/assets/logo.png";
 type Props = {
-	isMainPage?: boolean;
+	isOnSide?: boolean;
 };
 
-function StayConnected({ isMainPage }: Props) {
+function StayConnected({ isOnSide }: Props) {
 	return (
-		<div className="flex flex-col lg:items-start gap-16 lg:gap-8">
-			{!isMainPage && <Image src={logo} alt="logo" className="w-[250px] hidden lg:block" />}
+		<div className="flex flex-col lg:items-start gap-12 lg:gap-8">
+			{!isOnSide && <Image src={logo} alt="logo" className="w-[250px] hidden lg:block" />}
 
 			<span
 				className={`font-condensed font-bold text-[25px] ${
-					isMainPage ? "lg:text-[40px]" : "lg:text-[25px]"
+					isOnSide ? "lg:text-[40px]" : "lg:text-[25px]"
 				}`}
 			>
 				GELİŞMELERDEN İLK SEN HABERDAR OL!
@@ -20,7 +20,7 @@ function StayConnected({ isMainPage }: Props) {
 
 			<div
 				className={`flex justify-between w-full items-center border-b border-[#3B3B3B] pb-6 ${
-					isMainPage ? "" : "lg:min-w-lg"
+					isOnSide ? "" : "lg:min-w-lg"
 				}`}
 			>
 				<input

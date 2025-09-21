@@ -79,7 +79,7 @@ function TrendsSection({}: Props) {
 					{renderTrends}
 				</div>
 
-				<div className="flex items-center justify-center mt-10 lg:mt-0">
+				<div className="flex items-center justify-center mt-20">
 					<ShadowButton name="Tümünü Gör" shadow={false} color="white" />
 				</div>
 			</div>

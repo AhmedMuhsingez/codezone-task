@@ -2,17 +2,17 @@ import Image from "next/image";
 import { LINKS, SOCIAL_LINKS } from "@/data/data";
 import StayConnected from "../StayConnected";
 type Props = {
-	isMainPage?: boolean;
+	isOnSide?: boolean;
 };
 
-function Footer({ isMainPage }: Props) {
+function Footer({ isOnSide }: Props) {
 	return (
 		<div
 			className={`flex justify-between gap-10 font-main flex-col ${
-				isMainPage ? "flex-col" : "lg:flex-row px-6 py-10 lg:px-20"
+				isOnSide ? "flex-col" : "lg:flex-row px-6 py-10 lg:px-20"
 			}`}
 		>
-			<StayConnected isMainPage={isMainPage} />
+			<StayConnected isOnSide={isOnSide} />
 
 			<div className="flex flex-col gap-6 justify-end">
 				<div className="flex gap-4 items-center">
@@ -30,7 +30,7 @@ function Footer({ isMainPage }: Props) {
 
 				<div
 					className={`flex gap-4 text-[14px] flex-wrap-reverse ${
-						isMainPage ? "pt-10 lg:pt-20" : ""
+						isOnSide ? "pt-10 lg:pt-20" : ""
 					}`}
 				>
 					{LINKS.map((link) => (

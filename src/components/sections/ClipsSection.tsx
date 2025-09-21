@@ -32,7 +32,7 @@ function ClipsSection({}: Props) {
 				/>
 			</div>
 
-			<div className="w-full flex justify-center py-10">
+			<div className="w-full flex justify-center py-10 mt-6">
 				<ShadowButton color="white" shadow={false} name="Daha Fazla Gör" />
 			</div>
 		</div>
